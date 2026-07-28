@@ -1,15 +1,20 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerNormalMove : MonoBehaviour
 {
     public CharacterController controller;
+    [Header("การตั้งค่าผู้เล่น")]
     public float speed = 5f;
+    public float gravity = -9.81f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
-    public float gravity = -9.81f;
+    [Header("")]
     Vector3 velocity;
-    // ---------------------------------
 
+    // PRIVATE SPACE  ---------------------------------
+    private bool foundTrash = false;
+    private GameObject trash;
     private Animator anim;
 
     void Start()
@@ -47,5 +52,35 @@ public class PlayerNormalMove : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        //--------------------------------------------------------------------------------------------------------------------------------------
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (foundTrash && trash != null)
+            {
+                foundTrash = false;
+                trash.GetComponent<TrashObject>().Collect();
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Trash"))
+        {
+            foundTrash = true;
+            trash = other.gameObject;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Trash"))
+        {
+            foundTrash = false;
+            trash = null;
+            Debug.Log(trash);
+        }
     }
 }

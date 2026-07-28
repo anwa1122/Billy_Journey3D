@@ -1,8 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashObject : MonoBehaviour
 {
     public TrashData data;
+
+    public void Collect()
+    {
+        if (data != null)
+        {
+            InventoryManager.Instance.AddItem(data);
+        }
+        Destroy(gameObject);
+    }
 
     public void Setup(TrashData newData)
     {

@@ -3,10 +3,14 @@ using System.Collections.Generic;
 
 public class TrashSpawner : MonoBehaviour
 {
+    [Header("ข้อมูลตัวขยะ")]
     public List<TrashData> trashDatabase;
+    [Header("การตั้งค่าอื่นๆ")]
     public GameObject trashPrefab;
     public Transform spawnPoints;
     public Transform trashParent;
+
+    [Header("ตำแหน่งการเกิดบน SpawnPoint")]
     public float spawnYOffset = 0.5f;
 
     // PRIVATE CODE SPACE  ---------------------------------------------------------------------------------------------
@@ -50,7 +54,6 @@ public class TrashSpawner : MonoBehaviour
                         trashParent
                     );
 
-                    //GameObject newTrash = Instantiate(trashPrefab, point.position, Quaternion.identity, trashParent);
                     newTrash.GetComponent<TrashObject>().Setup(data);
                     //Debug.Log("ตอนนี้ได้ขยะ : " + data.name + " ที่ " + totalRareRate + " : " + randomRareRate + " : " + (data.rarity + totalRareRate));
                     break;
