@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     private bool foundTrash = false;
     private GameObject trash;
     private Animator anim;
+    private bool runAnimation;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class PlayerScript : MonoBehaviour
         if (freezePlayer)
         {
             speed = 0f;
+            anim.SetFloat("Speed", 0f);
         }
         else
         {
@@ -48,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (anim != null)
+        if (anim != null && !freezePlayer)
         {
             anim.SetFloat("Speed", direction.magnitude);
         }
@@ -57,8 +59,10 @@ public class PlayerScript : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+            if (!freezePlayer)
+            {
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            }
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }

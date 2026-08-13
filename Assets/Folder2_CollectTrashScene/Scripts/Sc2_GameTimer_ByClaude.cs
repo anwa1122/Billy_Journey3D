@@ -42,6 +42,7 @@ public class Sc2_GameTimer_ByClaude : MonoBehaviour
         //-----------------------------------------------------------------------------------
         Sc2_GameManager.Instance.ChangeState(Sc2_GameState.Tutorial);
 
+
         if (missionText != null)
         {
             missionText.gameObject.SetActive(true);
