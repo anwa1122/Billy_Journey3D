@@ -5,10 +5,21 @@ using TMPro;
 public class Sc4_ClearBtn : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    private bool alreadyClick = false;
+
+    void Start()
+    {
+        alreadyClick = false;
+    }
     public void ClearLeaderBoard()
     {
-        StartCoroutine(ClearLeaderBoardData());
+        if (!alreadyClick)
+        {
+            alreadyClick = true;
+            StartCoroutine(ClearLeaderBoardData());
+        }
     }
+
 
     IEnumerator ClearLeaderBoardData()
     {
@@ -16,5 +27,6 @@ public class Sc4_ClearBtn : MonoBehaviour
         text.text = "Cleared!";
         yield return new WaitForSeconds(1f);
         text.text = "Clear Data";
+        alreadyClick = false;
     }
 }

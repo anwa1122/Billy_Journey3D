@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 571, y: 1.9107227}
-  m_SizeDelta: {x: 465.4713, y: 75.5798}
+  m_AnchoredPosition: {x: 571, y: 0.000017166}
+  m_SizeDelta: {x: 416.0768, y: 75.5798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7254065
 MonoBehaviour:
@@ -1436,6 +1436,7 @@ GameObject:
   - component: {fileID: 988077059}
   - component: {fileID: 988077058}
   - component: {fileID: 988077057}
+  - component: {fileID: 988077060}
   m_Layer: 5
   m_Name: Btn_Exit
   m_TagString: Untagged
@@ -1557,6 +1558,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988077055}
   m_CullTransparentMesh: 1
+--- !u!114 &988077060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988077055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896ebf6f49d3a040b4d80c2bc331478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuteHoverTilt
+  amplitude: 5
+  frequency: 2
+  speed: 1
+  returnSmoothness: 7
+  pressScale: 0.88
+  squashSmoothness: 12
 --- !u!1 &1025721368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sc1_PlayerNameInput
   inputField: {fileID: 7254065}
   errorText: {fileID: 720975859}
+  maxCharacter: 12
   playerName: 
 --- !u!4 &1431724695
 Transform:
@@ -1910,6 +1930,7 @@ GameObject:
   - component: {fileID: 2097459841}
   - component: {fileID: 2097459840}
   - component: {fileID: 2097459839}
+  - component: {fileID: 2097459842}
   m_Layer: 5
   m_Name: Btn_LeaderBoard
   m_TagString: Untagged
@@ -2031,6 +2052,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097459837}
   m_CullTransparentMesh: 1
+--- !u!114 &2097459842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097459837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896ebf6f49d3a040b4d80c2bc331478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuteHoverTilt
+  amplitude: 5
+  frequency: 2
+  speed: 1
+  returnSmoothness: 7
+  pressScale: 0.88
+  squashSmoothness: 12
 --- !u!1 &2107017351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,6 +2219,7 @@ GameObject:
   - component: {fileID: 2125998187}
   - component: {fileID: 2125998186}
   - component: {fileID: 2125998185}
+  - component: {fileID: 2125998188}
   m_Layer: 5
   m_Name: Btn_Play
   m_TagString: Untagged
@@ -2301,6 +2341,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125998183}
   m_CullTransparentMesh: 1
+--- !u!114 &2125998188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125998183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c896ebf6f49d3a040b4d80c2bc331478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CuteHoverSway
+  amplitude: 5
+  frequency: 2
+  speed: 1
+  returnSmoothness: 7
+  pressScale: 0.88
+  squashSmoothness: 12
 --- !u!1001 &1695332971849755918
 PrefabInstance:
   m_ObjectHideFlags: 0

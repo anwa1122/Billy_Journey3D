@@ -3,6 +3,7 @@ using System.Collections.Generic;
 //using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine.UI; // 👈 เพิ่มบรรทัดนี้ครับ
 using System.Collections;
+using TMPro;
 public class Sc3_SortingManager : MonoBehaviour
 {
     public static Sc3_SortingManager Instance;
@@ -19,6 +20,7 @@ public class Sc3_SortingManager : MonoBehaviour
     public float showSummarizeTime = 2f;
 
     public string NextSceneName;
+    public TextMeshProUGUI buttonText;
 
 
     [HideInInspector]
@@ -27,6 +29,8 @@ public class Sc3_SortingManager : MonoBehaviour
     public int allTrashCount;
     private int trashCorrectCount;
     private int trashInCorrectCount;
+    private Color defaultTextColor;
+    private bool alreadyConfirm;
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -46,6 +50,8 @@ public class Sc3_SortingManager : MonoBehaviour
     }
     void Start()
     {
+        alreadyConfirm = false;
+        defaultTextColor = buttonText.color;
         SpawnTrashes();
     }
 
@@ -62,11 +68,41 @@ public class Sc3_SortingManager : MonoBehaviour
 
     public void CheckTrashes()
     {
-        StartCoroutine(CheckTrashesRoutine());
+        if (!alreadyConfirm)
+        {
+            alreadyConfirm = true;
+
+            int trashCount = 0;
+            foreach (RectTransform rect in spawnArea)
+            {
+                trashCount += 1;
+            }
+
+            if (trashCount < 1)
+            {
+                StartCoroutine(CheckTrashesRoutine());
+            }
+            else
+            {
+                StartCoroutine(ThereAreStillTrashLeft());
+            }
+        }
+    }
+
+    private IEnumerator ThereAreStillTrashLeft()
+    {
+        buttonText.text = "There are trashes left";
+        buttonText.color = Color.red;
+        yield return new WaitForSeconds(2f);
+        alreadyConfirm = false;
+        buttonText.text = "Confirm";
+        buttonText.color = defaultTextColor;
     }
 
     private IEnumerator CheckTrashesRoutine()
     {
+        buttonText.text = "Confirmed!!";
+        buttonText.color = Color.green;
         foreach (Transform slot in allSlots)
         {
             TrashType slotType = slot.GetComponent<Sc3_TrashSlot>().trashType;

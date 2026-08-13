@@ -3,8 +3,18 @@ using UnityEngine;
 
 public class Sc4_MenuBtn : MonoBehaviour
 {
+    private bool alreadyClick = false;
+
+    void Start()
+    {
+        alreadyClick = false;
+    }
     public void goToMenu()
     {
-        SceneTransition.Instance.ChangeScene(GameScenes.Menu);
+        if (!alreadyClick)
+        {
+            alreadyClick = true;
+            SceneTransition.Instance.ChangeScene(GameScenes.Menu);
+        }
     }
 }
