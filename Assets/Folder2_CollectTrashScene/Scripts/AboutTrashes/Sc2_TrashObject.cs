@@ -22,6 +22,14 @@ public class Sc2_TrashObject : MonoBehaviour
         {
             GameObject visual = Instantiate(data.model3D, transform.position, transform.rotation);
             visual.transform.SetParent(this.transform);
+            Vector3 euler = visual.transform.eulerAngles;
+
+            // ตัวอย่าง: สุ่มเฉพาะแกน X (แกนอื่นคงเดิม)
+            euler.y = Random.Range(0f, 360f);
+            // euler.y = Random.Range(0f, 360f); // ถ้าอยากสุ่ม Y ด้วย
+            // euler.z คงเดิมตาม Prefab
+
+            visual.transform.rotation = Quaternion.Euler(euler);
 
             if (GetComponent<MeshRenderer>() != null)
             {

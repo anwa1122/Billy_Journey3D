@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2570837926253196389}
   - component: {fileID: 5635152629573101203}
   - component: {fileID: 2066784768306655591}
+  - component: {fileID: -7021077170277521513}
   m_Layer: 0
   m_Name: TrashPrefab
   m_TagString: Trash
@@ -126,3 +127,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashObject
   data: {fileID: 0}
+--- !u!114 &-7021077170277521513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339089475125235599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131b4948616fd1e4bb840ad715735eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sc2_FloatingTrash
+  floatSpeed: 1
+  floatAmplitude: 0.28
+  rotateSpeed: 30
+  randomizeDirection: 1
+  isRotateRight: 1
+  randomizeRotateSpeed: 1
+  minRotateSpeed: 10
+  maxRotateSpeed: 50
+  randomizeFloatAmplitude: 1
+  minFloatAmplitude: 0.2
+  maxFloatAmplitude: 0.3
+  randomizeFloatSpeed: 1
+  minFloatSpeed: 0.5
+  maxFloatSpeed: 1.5
