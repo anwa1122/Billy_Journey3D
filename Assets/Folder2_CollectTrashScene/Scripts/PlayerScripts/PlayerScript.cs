@@ -5,12 +5,19 @@ public class PlayerScript : MonoBehaviour
 {
     public CharacterController controller;
     [Header("การตั้งค่าผู้เล่น")]
-    public float speed = 5f;
+    public float speed = 5f;          // ความเร็วปกติ
+    public float sprintSpeed = 8.75f;       // ความเร็วสูงสุดตอนกด Shift (5 * 1.75)
+    public float acceleration = 8f;
+    float currentSpeed;
+
+
     public float gravity = -9.81f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public bool freezePlayer = false;
     [Header("")]
+    public float speedAnim = 2f;
+    public float currentSpeedAnim;
     Vector3 velocity;
 
     // PRIVATE SPACE  ---------------------------------
@@ -24,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         playerSpeed = speed;
+        currentSpeedAnim = anim.speed;
     }
 
     void Update()
@@ -35,7 +43,16 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            speed = playerSpeed;
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                currentSpeed = Mathf.MoveTowards(currentSpeed, sprintSpeed, acceleration * Time.deltaTime);
+            }
+            else
+            {
+                currentSpeed = Mathf.MoveTowards(currentSpeed, playerSpeed, acceleration * Time.deltaTime);
+            }
+            speed = currentSpeed;
+            anim.speed = currentSpeed / playerSpeed * 1.15f;
         }
 
         if (!controller.enabled) return;
@@ -54,6 +71,8 @@ public class PlayerScript : MonoBehaviour
         {
             anim.SetFloat("Speed", direction.magnitude);
         }
+
+
 
         if (direction.magnitude >= 0.1f)
         {

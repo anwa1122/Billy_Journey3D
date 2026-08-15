@@ -45,6 +45,12 @@ public class Sc2_TrashSpawner : MonoBehaviour
                 if (totalRareRate <= randomRareRate && randomRareRate < (data.rarity + totalRareRate))
                 {
                     //spawnYOffset = box.size.y / 2f;  /// เผื่อขยะมันขนาดไม่เท่ากัน
+                    int randomNullRate = Random.Range(0, 2);
+                    if (randomNullRate == 1)
+                    {
+                        continue;
+                    }
+
                     Vector3 spawnPos = point.position + Vector3.up * spawnYOffset;
 
                     GameObject newTrash = Instantiate(

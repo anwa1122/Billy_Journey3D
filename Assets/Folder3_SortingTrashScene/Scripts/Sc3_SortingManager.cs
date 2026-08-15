@@ -127,7 +127,7 @@ public class Sc3_SortingManager : MonoBehaviour
                         trashInCorrectCount += 1;
                     }
 
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
         }
