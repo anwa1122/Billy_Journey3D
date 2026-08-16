@@ -18,5 +18,5 @@ MonoBehaviour:
   score: 10
   rarity: 50
   sprite2D: {fileID: -1421850892, guid: eab3892b7e5e41448b3bb4ef9453c27f, type: 3}
-  model3D: {fileID: 7013729395399987205, guid: 2f68d119bae3e78488a97bf1e830bcac, type: 3}
+  model3D: {fileID: 2402867930633952214, guid: a6bea207c2db94c4089a957ada24f7a0, type: 3}
   canSpawn: 1
