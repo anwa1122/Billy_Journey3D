@@ -410,8 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1362147e5e20a44448ee344a03f78419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sc2_GameTimer_ByClaude
-  tutorialTime: 1
-  countdownTime: 1
+  tutorialTime: 5
+  countdownTime: 3
   countdownInterval: 0.9
   goTime: 1
   gameTime: 45
@@ -6281,8 +6281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000102197504, y: -195.4967}
-  m_SizeDelta: {x: 293.26, y: 256.9159}
+  m_AnchoredPosition: {x: 0, y: -189}
+  m_SizeDelta: {x: 385.3588, y: 256.9159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137233610
 MonoBehaviour:
@@ -6304,7 +6304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -373726392, guid: bc3848544f2c075469cd1d06bd3e5cfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13015,7 +13015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d84c08fa91d3f6045ad0df2341c751d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.33
+      value: 0.266
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d84c08fa91d3f6045ad0df2341c751d0, type: 3}
       propertyPath: m_LocalPosition.z
