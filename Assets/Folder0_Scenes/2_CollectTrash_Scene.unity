@@ -493,7 +493,7 @@ MonoBehaviour:
   countdownTime: 3
   countdownInterval: 0.9
   goTime: 1
-  gameTime: 9999
+  gameTime: 45
   endTime: 3
   timerText: {fileID: 1930696957}
   countdownText: {fileID: 1149152549}
