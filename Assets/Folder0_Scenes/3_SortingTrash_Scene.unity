@@ -2003,7 +2003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746040516847387733, guid: 905970a0bef6d284d9c5ab956ab84e43, type: 3}
       propertyPath: transitionSpeed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2746040516847387733, guid: 905970a0bef6d284d9c5ab956ab84e43, type: 3}
       propertyPath: transitionCanvas
@@ -3513,8 +3513,8 @@ RectTransform:
   - {fileID: 1535717141}
   - {fileID: 1329642487}
   - {fileID: 529749317}
-  - {fileID: 1876583345}
   - {fileID: 787920608}
+  - {fileID: 1876583345}
   - {fileID: 1970655709}
   - {fileID: 368497730}
   m_Father: {fileID: 0}

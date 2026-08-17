@@ -96,6 +96,7 @@ public class PlayerScript : MonoBehaviour
             if (foundTrash && trash != null)
             {
                 foundTrash = false;
+                Sc2_CuteTextBounce.Instance.PlayBounceOut();
                 trash.GetComponent<Sc2_TrashObject>().Collect();
             }
         }
@@ -106,6 +107,7 @@ public class PlayerScript : MonoBehaviour
         if (other.CompareTag("Trash"))
         {
             foundTrash = true;
+            Sc2_CuteTextBounce.Instance.PlayBounce();
             trash = other.gameObject;
         }
     }
@@ -115,6 +117,7 @@ public class PlayerScript : MonoBehaviour
         if (other.CompareTag("Trash"))
         {
             foundTrash = false;
+            Sc2_CuteTextBounce.Instance.PlayBounceOut();
             trash = null;
         }
     }

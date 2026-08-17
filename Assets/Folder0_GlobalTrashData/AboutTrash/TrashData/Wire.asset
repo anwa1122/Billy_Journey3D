@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrashData
   trashName: Wire
   description: 
-  trashType: 0
+  trashType: 3
   score: 15
-  rarity: 50
+  rarity: 30
   sprite2D: {fileID: 2065185612, guid: 4c7416e4217fd724da3d2b2f4e6719fd, type: 3}
   model3D: {fileID: 3964543379449991293, guid: d86a9fb64b08e964a8bb5f7af91968ea, type: 3}
   canSpawn: 1

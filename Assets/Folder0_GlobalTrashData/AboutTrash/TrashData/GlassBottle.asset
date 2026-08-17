@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrashData
   trashName: GlassBottle
   description: 
-  trashType: 1
+  trashType: 2
   score: 10
   rarity: 50
   sprite2D: {fileID: -1421850892, guid: eab3892b7e5e41448b3bb4ef9453c27f, type: 3}

@@ -15,8 +15,8 @@ MonoBehaviour:
   trashName: Zinc
   description: 
   trashType: 3
-  score: 50
-  rarity: 10
+  score: 25
+  rarity: 7
   sprite2D: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   model3D: {fileID: 5508458695242816313, guid: f179ff893bc735144bb889f7cea419bd, type: 3}
   canSpawn: 1

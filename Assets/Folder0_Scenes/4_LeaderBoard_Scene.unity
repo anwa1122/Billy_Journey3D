@@ -581,7 +581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746040516847387733, guid: 905970a0bef6d284d9c5ab956ab84e43, type: 3}
       propertyPath: transitionSpeed
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2746040516847387733, guid: 905970a0bef6d284d9c5ab956ab84e43, type: 3}
       propertyPath: transitionCanvas

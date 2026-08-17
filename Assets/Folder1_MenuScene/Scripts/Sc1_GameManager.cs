@@ -1,16 +1,25 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
+
 
 public class Sc1_GameManager : MonoBehaviour
 {
+    private bool alreadyClick = false;
+    void Start()
+    {
+        alreadyClick = false;
+    }
     public void gameStart()
     {
-        if (!string.IsNullOrWhiteSpace(Sc1_PlayerNameInput.Instance.playerName))
+        if (!string.IsNullOrWhiteSpace(Sc1_PlayerNameInput.Instance.playerName) && !alreadyClick)
         {
+            alreadyClick = true;
             SceneTransition.Instance.ChangeScene(GameScenes.Collect);
         }
-        else
+        else if (!alreadyClick)
         {
             Sc1_PlayerNameInput.Instance.ShowNameError();
+
         }
     }
 
